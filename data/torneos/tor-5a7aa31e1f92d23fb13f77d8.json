@@ -10,13 +10,30 @@
   "venues": [],
   "teams": [],
   "entries": [],
-  "divisions": [],
+  "divisions": [
+    {
+      "id": "div-5b0affe07c69b1b88756d745",
+      "name": "Preescolar 2021 y posteriores",
+      "branch": "Varonil",
+      "groups": [],
+      "qualify": 2,
+      "win": 2,
+      "loss": 1,
+      "forfeit": 0,
+      "tieOrder": [],
+      "bracketSeeds": []
+    }
+  ],
   "games": [],
   "trash": [],
   "history": [
     {
       "at": "2026-09-25T18:43:55.222Z",
       "action": "Torneo creado"
+    },
+    {
+      "at": "2026-09-25T18:45:34.383Z",
+      "action": "Categoría y rama guardadas"
     }
   ]
 }

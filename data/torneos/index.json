@@ -7,8 +7,14 @@
       "status": "publicado",
       "start": "2026-11-06",
       "end": "2026-11-08",
-      "divisions": [],
-      "updatedAt": "2026-09-25T18:43:56.886Z"
+      "divisions": [
+        {
+          "id": "div-5b0affe07c69b1b88756d745",
+          "name": "Preescolar 2021 y posteriores",
+          "branch": "Varonil"
+        }
+      ],
+      "updatedAt": "2026-09-25T18:45:35.686Z"
     }
   ]
 }
