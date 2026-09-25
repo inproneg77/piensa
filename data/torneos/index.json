@@ -52,9 +52,14 @@
           "id": "div-fed291374ae0269f1c77ede8",
           "name": "Pasarela 2013-2014",
           "branch": "Femenil"
+        },
+        {
+          "id": "div-e362a1ee3fad6fc4f02dae82",
+          "name": "Cadetes 2011-2012",
+          "branch": "Varonil"
         }
       ],
-      "updatedAt": "2026-09-25T18:49:01.981Z"
+      "updatedAt": "2026-09-25T18:49:21.754Z"
     }
   ]
 }
