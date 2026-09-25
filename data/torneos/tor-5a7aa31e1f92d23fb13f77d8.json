@@ -22,6 +22,18 @@
       "forfeit": 0,
       "tieOrder": [],
       "bracketSeeds": []
+    },
+    {
+      "id": "div-2e86d36cb526ca739488d046",
+      "name": "Preescolar 2021 y Posteriores",
+      "branch": "Femenil",
+      "groups": [],
+      "qualify": 2,
+      "win": 2,
+      "loss": 1,
+      "forfeit": 0,
+      "tieOrder": [],
+      "bracketSeeds": []
     }
   ],
   "games": [],
@@ -33,6 +45,10 @@
     },
     {
       "at": "2026-09-25T18:45:34.383Z",
+      "action": "Categoría y rama guardadas"
+    },
+    {
+      "at": "2026-09-25T18:46:04.899Z",
       "action": "Categoría y rama guardadas"
     }
   ]
