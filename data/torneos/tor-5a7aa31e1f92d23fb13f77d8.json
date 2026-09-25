@@ -30,15 +30,7 @@
       "logo": "img/torneos/tor-5a7aa31e1f92d23fb13f77d8/logo-f40e01de6f630c025f93e539.png"
     }
   ],
-  "entries": [
-    {
-      "id": "entry-b1f4c3f4c342a073b635dc3a",
-      "teamId": "team-4dc160cdf7d7765d3213b917",
-      "divisionId": "div-5b0affe07c69b1b88756d745",
-      "groupId": "",
-      "roster": []
-    }
-  ],
+  "entries": [],
   "divisions": [
     {
       "id": "div-5b0affe07c69b1b88756d745",
@@ -312,6 +304,18 @@
         "roster": []
       },
       "at": "2026-09-25T19:10:39.053Z"
+    },
+    {
+      "id": "trash-30de80d5c3878e9d48ca21bb",
+      "kind": "entry",
+      "value": {
+        "id": "entry-b1f4c3f4c342a073b635dc3a",
+        "teamId": "team-4dc160cdf7d7765d3213b917",
+        "divisionId": "div-5b0affe07c69b1b88756d745",
+        "groupId": "",
+        "roster": []
+      },
+      "at": "2026-09-25T21:03:46.838Z"
     }
   ],
   "history": [
@@ -430,6 +434,10 @@
     {
       "at": "2026-09-25T21:03:34.513Z",
       "action": "Equipo creado e inscrito"
+    },
+    {
+      "at": "2026-09-25T21:03:46.838Z",
+      "action": "Inscripción retirada"
     }
   ]
 }
