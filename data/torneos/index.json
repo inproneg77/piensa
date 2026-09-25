@@ -1,3 +1,14 @@
 {
-  "torneos": []
+  "torneos": [
+    {
+      "id": "tor-5a7aa31e1f92d23fb13f77d8",
+      "name": "Caborca Piensa en Grande 2026",
+      "logo": "img/torneos/tor-5a7aa31e1f92d23fb13f77d8/logo-87ae3b1e22630e4d09a4c1ee.png",
+      "status": "publicado",
+      "start": "2026-11-06",
+      "end": "2026-11-08",
+      "divisions": [],
+      "updatedAt": "2026-09-25T18:43:56.886Z"
+    }
+  ]
 }
