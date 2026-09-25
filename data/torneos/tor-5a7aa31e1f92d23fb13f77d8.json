@@ -27,13 +27,6 @@
   ],
   "entries": [
     {
-      "id": "entry-999cfc5e82a9f343d0de79dd",
-      "teamId": "team-1342d9ba24fe58a7d3e59398",
-      "divisionId": "div-2ffe516b53998282ab34687d",
-      "groupId": "group-da901ff152c381af1c75f845",
-      "roster": []
-    },
-    {
       "id": "entry-2831fb9ab181dab5d6ef00fe",
       "teamId": "team-ffa2267e11e5bc1dd582caa2",
       "divisionId": "div-2ffe516b53998282ab34687d",
@@ -290,6 +283,18 @@
         "away": "entry-2831fb9ab181dab5d6ef00fe"
       },
       "at": "2026-09-25T19:10:14.764Z"
+    },
+    {
+      "id": "trash-2202958f415d5e9f1ed9b290",
+      "kind": "entry",
+      "value": {
+        "id": "entry-999cfc5e82a9f343d0de79dd",
+        "teamId": "team-1342d9ba24fe58a7d3e59398",
+        "divisionId": "div-2ffe516b53998282ab34687d",
+        "groupId": "group-da901ff152c381af1c75f845",
+        "roster": []
+      },
+      "at": "2026-09-25T19:10:32.098Z"
     }
   ],
   "history": [
@@ -396,6 +401,10 @@
     {
       "at": "2026-09-25T19:10:14.765Z",
       "action": "Partido actualizado"
+    },
+    {
+      "at": "2026-09-25T19:10:32.099Z",
+      "action": "Inscripción retirada"
     }
   ]
 }
