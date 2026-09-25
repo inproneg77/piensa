@@ -58,6 +58,18 @@
       "forfeit": 0,
       "tieOrder": [],
       "bracketSeeds": []
+    },
+    {
+      "id": "div-d8020ff18b5ee39372fc377a",
+      "name": "Micro 2017-2018",
+      "branch": "Femenil",
+      "groups": [],
+      "qualify": 2,
+      "win": 2,
+      "loss": 1,
+      "forfeit": 0,
+      "tieOrder": [],
+      "bracketSeeds": []
     }
   ],
   "games": [],
@@ -85,6 +97,10 @@
     },
     {
       "at": "2026-09-25T18:47:31.702Z",
+      "action": "Categoría y rama guardadas"
+    },
+    {
+      "at": "2026-09-25T18:47:51.090Z",
       "action": "Categoría y rama guardadas"
     }
   ]
