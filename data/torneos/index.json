@@ -17,9 +17,14 @@
           "id": "div-2e86d36cb526ca739488d046",
           "name": "Preescolar 2021 y Posteriores",
           "branch": "Femenil"
+        },
+        {
+          "id": "div-c4ef9a849caf23ccaf26c016",
+          "name": "Biberon Mixto 2019-2020",
+          "branch": "Varonil"
         }
       ],
-      "updatedAt": "2026-09-25T18:46:05.958Z"
+      "updatedAt": "2026-09-25T18:46:34.175Z"
     }
   ]
 }
