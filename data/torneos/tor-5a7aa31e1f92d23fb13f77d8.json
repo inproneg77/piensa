@@ -30,14 +30,14 @@
       "id": "entry-999cfc5e82a9f343d0de79dd",
       "teamId": "team-1342d9ba24fe58a7d3e59398",
       "divisionId": "div-2ffe516b53998282ab34687d",
-      "groupId": "",
+      "groupId": "group-da901ff152c381af1c75f845",
       "roster": []
     },
     {
       "id": "entry-2831fb9ab181dab5d6ef00fe",
       "teamId": "team-ffa2267e11e5bc1dd582caa2",
       "divisionId": "div-2ffe516b53998282ab34687d",
-      "groupId": "",
+      "groupId": "group-da901ff152c381af1c75f845",
       "roster": []
     }
   ],
@@ -202,7 +202,12 @@
       "id": "div-2ffe516b53998282ab34687d",
       "name": "2da Fuerza",
       "branch": "Varonil",
-      "groups": [],
+      "groups": [
+        {
+          "id": "group-da901ff152c381af1c75f845",
+          "name": "Grupo A"
+        }
+      ],
       "qualify": 2,
       "win": 2,
       "loss": 1,
@@ -354,6 +359,10 @@
     {
       "at": "2026-09-25T19:07:35.838Z",
       "action": "Equipo creado e inscrito"
+    },
+    {
+      "at": "2026-09-25T19:08:05.496Z",
+      "action": "Grupos organizados"
     }
   ]
 }
