@@ -202,6 +202,18 @@
       "forfeit": 0,
       "tieOrder": [],
       "bracketSeeds": []
+    },
+    {
+      "id": "div-389c62f936ae37548567fe0a",
+      "name": "1ra Fuerza",
+      "branch": "Femenil",
+      "groups": [],
+      "qualify": 2,
+      "win": 2,
+      "loss": 1,
+      "forfeit": 0,
+      "tieOrder": [],
+      "bracketSeeds": []
     }
   ],
   "games": [],
@@ -277,6 +289,10 @@
     },
     {
       "at": "2026-09-25T18:50:56.868Z",
+      "action": "Categoría y rama guardadas"
+    },
+    {
+      "at": "2026-09-25T18:51:09.939Z",
       "action": "Categoría y rama guardadas"
     }
   ]

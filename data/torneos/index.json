@@ -87,9 +87,14 @@
           "id": "div-4f9384f80f95e4fbef67c3ae",
           "name": "1ra Fuerza",
           "branch": "Varonil"
+        },
+        {
+          "id": "div-389c62f936ae37548567fe0a",
+          "name": "1ra Fuerza",
+          "branch": "Femenil"
         }
       ],
-      "updatedAt": "2026-09-25T18:50:57.935Z"
+      "updatedAt": "2026-09-25T18:51:11.081Z"
     }
   ]
 }
