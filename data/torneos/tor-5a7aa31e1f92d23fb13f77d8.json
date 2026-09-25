@@ -142,6 +142,18 @@
       "forfeit": 0,
       "tieOrder": [],
       "bracketSeeds": []
+    },
+    {
+      "id": "div-75c31ff71a642853a178eac6",
+      "name": "Elite 2019-2010",
+      "branch": "Varonil",
+      "groups": [],
+      "qualify": 2,
+      "win": 2,
+      "loss": 1,
+      "forfeit": 0,
+      "tieOrder": [],
+      "bracketSeeds": []
     }
   ],
   "games": [],
@@ -197,6 +209,10 @@
     },
     {
       "at": "2026-09-25T18:49:36.966Z",
+      "action": "Categoría y rama guardadas"
+    },
+    {
+      "at": "2026-09-25T18:49:57.407Z",
       "action": "Categoría y rama guardadas"
     }
   ]

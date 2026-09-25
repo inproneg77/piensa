@@ -62,9 +62,14 @@
           "id": "div-05f9d6e6f4d51f099dff19c4",
           "name": "Cadetes 2011-2012",
           "branch": "Femenil"
+        },
+        {
+          "id": "div-75c31ff71a642853a178eac6",
+          "name": "Elite 2019-2010",
+          "branch": "Varonil"
         }
       ],
-      "updatedAt": "2026-09-25T18:49:38.033Z"
+      "updatedAt": "2026-09-25T18:49:58.472Z"
     }
   ]
 }
