@@ -166,6 +166,18 @@
       "forfeit": 0,
       "tieOrder": [],
       "bracketSeeds": []
+    },
+    {
+      "id": "div-2ffe516b53998282ab34687d",
+      "name": "2da Fuerza",
+      "branch": "Varonil",
+      "groups": [],
+      "qualify": 2,
+      "win": 2,
+      "loss": 1,
+      "forfeit": 0,
+      "tieOrder": [],
+      "bracketSeeds": []
     }
   ],
   "games": [],
@@ -229,6 +241,10 @@
     },
     {
       "at": "2026-09-25T18:50:09.583Z",
+      "action": "Categoría y rama guardadas"
+    },
+    {
+      "at": "2026-09-25T18:50:25.312Z",
       "action": "Categoría y rama guardadas"
     }
   ]
