@@ -42,9 +42,14 @@
           "id": "div-4ed2c3a358cb5c00c9726b8e",
           "name": "Infantil 2015-2016",
           "branch": "Femenil"
+        },
+        {
+          "id": "div-7f8c6de0c12160c8ffe959f6",
+          "name": "Pasarela 2013-2014",
+          "branch": "Varonil"
         }
       ],
-      "updatedAt": "2026-09-25T18:48:30.766Z"
+      "updatedAt": "2026-09-25T18:48:49.669Z"
     }
   ]
 }
