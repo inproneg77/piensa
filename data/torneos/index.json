@@ -57,9 +57,14 @@
           "id": "div-e362a1ee3fad6fc4f02dae82",
           "name": "Cadetes 2011-2012",
           "branch": "Varonil"
+        },
+        {
+          "id": "div-05f9d6e6f4d51f099dff19c4",
+          "name": "Cadetes 2011-2012",
+          "branch": "Femenil"
         }
       ],
-      "updatedAt": "2026-09-25T18:49:21.754Z"
+      "updatedAt": "2026-09-25T18:49:38.033Z"
     }
   ]
 }
