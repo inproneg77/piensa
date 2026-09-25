@@ -25,15 +25,7 @@
       "logo": ""
     }
   ],
-  "entries": [
-    {
-      "id": "entry-2831fb9ab181dab5d6ef00fe",
-      "teamId": "team-ffa2267e11e5bc1dd582caa2",
-      "divisionId": "div-2ffe516b53998282ab34687d",
-      "groupId": "group-da901ff152c381af1c75f845",
-      "roster": []
-    }
-  ],
+  "entries": [],
   "divisions": [
     {
       "id": "div-5b0affe07c69b1b88756d745",
@@ -295,6 +287,18 @@
         "roster": []
       },
       "at": "2026-09-25T19:10:32.098Z"
+    },
+    {
+      "id": "trash-5c7f018e53b1b18b07e5ae7e",
+      "kind": "entry",
+      "value": {
+        "id": "entry-2831fb9ab181dab5d6ef00fe",
+        "teamId": "team-ffa2267e11e5bc1dd582caa2",
+        "divisionId": "div-2ffe516b53998282ab34687d",
+        "groupId": "group-da901ff152c381af1c75f845",
+        "roster": []
+      },
+      "at": "2026-09-25T19:10:39.053Z"
     }
   ],
   "history": [
@@ -404,6 +408,10 @@
     },
     {
       "at": "2026-09-25T19:10:32.099Z",
+      "action": "Inscripción retirada"
+    },
+    {
+      "at": "2026-09-25T19:10:39.054Z",
       "action": "Inscripción retirada"
     }
   ]
