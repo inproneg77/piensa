@@ -13,9 +13,22 @@
       "id": "team-a22dbd1676300ffc2a565a3d",
       "name": "Caborca Vets",
       "logo": "img/torneos/tor-5a7aa31e1f92d23fb13f77d8/logo-ee5fe50316ba738c247c9dba.png"
+    },
+    {
+      "id": "team-1342d9ba24fe58a7d3e59398",
+      "name": "Cabervoca veta",
+      "logo": ""
     }
   ],
-  "entries": [],
+  "entries": [
+    {
+      "id": "entry-999cfc5e82a9f343d0de79dd",
+      "teamId": "team-1342d9ba24fe58a7d3e59398",
+      "divisionId": "div-2ffe516b53998282ab34687d",
+      "groupId": "",
+      "roster": []
+    }
+  ],
   "divisions": [
     {
       "id": "div-5b0affe07c69b1b88756d745",
@@ -321,6 +334,10 @@
     {
       "at": "2026-09-25T19:06:24.312Z",
       "action": "Inscripción retirada"
+    },
+    {
+      "at": "2026-09-25T19:07:21.378Z",
+      "action": "Equipo creado e inscrito"
     }
   ]
 }
