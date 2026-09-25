@@ -18,12 +18,24 @@
       "id": "team-1342d9ba24fe58a7d3e59398",
       "name": "Cabervoca veta",
       "logo": ""
+    },
+    {
+      "id": "team-ffa2267e11e5bc1dd582caa2",
+      "name": "Caborca vets2",
+      "logo": ""
     }
   ],
   "entries": [
     {
       "id": "entry-999cfc5e82a9f343d0de79dd",
       "teamId": "team-1342d9ba24fe58a7d3e59398",
+      "divisionId": "div-2ffe516b53998282ab34687d",
+      "groupId": "",
+      "roster": []
+    },
+    {
+      "id": "entry-2831fb9ab181dab5d6ef00fe",
+      "teamId": "team-ffa2267e11e5bc1dd582caa2",
       "divisionId": "div-2ffe516b53998282ab34687d",
       "groupId": "",
       "roster": []
@@ -337,6 +349,10 @@
     },
     {
       "at": "2026-09-25T19:07:21.378Z",
+      "action": "Equipo creado e inscrito"
+    },
+    {
+      "at": "2026-09-25T19:07:35.838Z",
       "action": "Equipo creado e inscrito"
     }
   ]
