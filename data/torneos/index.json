@@ -47,9 +47,14 @@
           "id": "div-7f8c6de0c12160c8ffe959f6",
           "name": "Pasarela 2013-2014",
           "branch": "Varonil"
+        },
+        {
+          "id": "div-fed291374ae0269f1c77ede8",
+          "name": "Pasarela 2013-2014",
+          "branch": "Femenil"
         }
       ],
-      "updatedAt": "2026-09-25T18:48:49.669Z"
+      "updatedAt": "2026-09-25T18:49:01.981Z"
     }
   ]
 }
