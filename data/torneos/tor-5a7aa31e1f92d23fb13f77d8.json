@@ -252,28 +252,7 @@
       "bracketSeeds": []
     }
   ],
-  "games": [
-    {
-      "id": "game-38517a459a7e8f7d007c1e7e",
-      "divisionId": "div-2ffe516b53998282ab34687d",
-      "groupId": "group-da901ff152c381af1c75f845",
-      "phase": "groups",
-      "round": 1,
-      "status": "programado",
-      "homeScore": 0,
-      "awayScore": 0,
-      "homeStats": [],
-      "awayStats": [],
-      "forfeit": "ninguno",
-      "statsComplete": false,
-      "date": "2026-11-06",
-      "time": "12:08",
-      "venueId": null,
-      "duration": 50,
-      "home": "entry-999cfc5e82a9f343d0de79dd",
-      "away": "entry-2831fb9ab181dab5d6ef00fe"
-    }
-  ],
+  "games": [],
   "trash": [
     {
       "id": "trash-da508b1077db040f59afbf13",
@@ -286,6 +265,31 @@
         "roster": []
       },
       "at": "2026-09-25T19:06:24.309Z"
+    },
+    {
+      "id": "trash-08abbcbe016cd2fa19fa4639",
+      "kind": "game",
+      "value": {
+        "id": "game-38517a459a7e8f7d007c1e7e",
+        "divisionId": "div-2ffe516b53998282ab34687d",
+        "groupId": "group-da901ff152c381af1c75f845",
+        "phase": "groups",
+        "round": 1,
+        "status": "programado",
+        "homeScore": 0,
+        "awayScore": 0,
+        "homeStats": [],
+        "awayStats": [],
+        "forfeit": "ninguno",
+        "statsComplete": false,
+        "date": "2026-11-06",
+        "time": "12:08",
+        "venueId": null,
+        "duration": 50,
+        "home": "entry-999cfc5e82a9f343d0de79dd",
+        "away": "entry-2831fb9ab181dab5d6ef00fe"
+      },
+      "at": "2026-09-25T19:10:14.764Z"
     }
   ],
   "history": [
@@ -388,6 +392,10 @@
     {
       "at": "2026-09-25T19:09:11.237Z",
       "action": "Horario del partido guardado"
+    },
+    {
+      "at": "2026-09-25T19:10:14.765Z",
+      "action": "Partido actualizado"
     }
   ]
 }
