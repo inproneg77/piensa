@@ -178,6 +178,18 @@
       "forfeit": 0,
       "tieOrder": [],
       "bracketSeeds": []
+    },
+    {
+      "id": "div-4f63e695ba47e060d6b6dab2",
+      "name": "2da Fuerza",
+      "branch": "Femenil",
+      "groups": [],
+      "qualify": 2,
+      "win": 2,
+      "loss": 1,
+      "forfeit": 0,
+      "tieOrder": [],
+      "bracketSeeds": []
     }
   ],
   "games": [],
@@ -245,6 +257,10 @@
     },
     {
       "at": "2026-09-25T18:50:25.312Z",
+      "action": "Categoría y rama guardadas"
+    },
+    {
+      "at": "2026-09-25T18:50:42.492Z",
       "action": "Categoría y rama guardadas"
     }
   ]

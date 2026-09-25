@@ -77,9 +77,14 @@
           "id": "div-2ffe516b53998282ab34687d",
           "name": "2da Fuerza",
           "branch": "Varonil"
+        },
+        {
+          "id": "div-4f63e695ba47e060d6b6dab2",
+          "name": "2da Fuerza",
+          "branch": "Femenil"
         }
       ],
-      "updatedAt": "2026-09-25T18:50:26.830Z"
+      "updatedAt": "2026-09-25T18:50:43.562Z"
     }
   ]
 }
