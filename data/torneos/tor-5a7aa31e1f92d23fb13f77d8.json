@@ -70,6 +70,18 @@
       "forfeit": 0,
       "tieOrder": [],
       "bracketSeeds": []
+    },
+    {
+      "id": "div-5b6ebc9f8f409669fb27579c",
+      "name": "Infantil 2015-2016",
+      "branch": "Varonil",
+      "groups": [],
+      "qualify": 2,
+      "win": 2,
+      "loss": 1,
+      "forfeit": 0,
+      "tieOrder": [],
+      "bracketSeeds": []
     }
   ],
   "games": [],
@@ -101,6 +113,10 @@
     },
     {
       "at": "2026-09-25T18:47:51.090Z",
+      "action": "Categoría y rama guardadas"
+    },
+    {
+      "at": "2026-09-25T18:48:16.247Z",
       "action": "Categoría y rama guardadas"
     }
   ]

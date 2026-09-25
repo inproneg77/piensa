@@ -32,9 +32,14 @@
           "id": "div-d8020ff18b5ee39372fc377a",
           "name": "Micro 2017-2018",
           "branch": "Femenil"
+        },
+        {
+          "id": "div-5b6ebc9f8f409669fb27579c",
+          "name": "Infantil 2015-2016",
+          "branch": "Varonil"
         }
       ],
-      "updatedAt": "2026-09-25T18:47:52.209Z"
+      "updatedAt": "2026-09-25T18:48:17.288Z"
     }
   ]
 }
