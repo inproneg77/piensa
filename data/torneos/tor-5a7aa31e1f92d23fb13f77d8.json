@@ -23,9 +23,22 @@
       "id": "team-ffa2267e11e5bc1dd582caa2",
       "name": "Caborca vets2",
       "logo": ""
+    },
+    {
+      "id": "team-4dc160cdf7d7765d3213b917",
+      "name": "cfe",
+      "logo": "img/torneos/tor-5a7aa31e1f92d23fb13f77d8/logo-f40e01de6f630c025f93e539.png"
     }
   ],
-  "entries": [],
+  "entries": [
+    {
+      "id": "entry-b1f4c3f4c342a073b635dc3a",
+      "teamId": "team-4dc160cdf7d7765d3213b917",
+      "divisionId": "div-5b0affe07c69b1b88756d745",
+      "groupId": "",
+      "roster": []
+    }
+  ],
   "divisions": [
     {
       "id": "div-5b0affe07c69b1b88756d745",
@@ -413,6 +426,10 @@
     {
       "at": "2026-09-25T19:10:39.054Z",
       "action": "Inscripción retirada"
+    },
+    {
+      "at": "2026-09-25T21:03:34.513Z",
+      "action": "Equipo creado e inscrito"
     }
   ]
 }
