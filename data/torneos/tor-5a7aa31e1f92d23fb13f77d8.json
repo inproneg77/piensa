@@ -82,6 +82,18 @@
       "forfeit": 0,
       "tieOrder": [],
       "bracketSeeds": []
+    },
+    {
+      "id": "div-4ed2c3a358cb5c00c9726b8e",
+      "name": "Infantil 2015-2016",
+      "branch": "Femenil",
+      "groups": [],
+      "qualify": 2,
+      "win": 2,
+      "loss": 1,
+      "forfeit": 0,
+      "tieOrder": [],
+      "bracketSeeds": []
     }
   ],
   "games": [],
@@ -117,6 +129,10 @@
     },
     {
       "at": "2026-09-25T18:48:16.247Z",
+      "action": "Categoría y rama guardadas"
+    },
+    {
+      "at": "2026-09-25T18:48:29.690Z",
       "action": "Categoría y rama guardadas"
     }
   ]

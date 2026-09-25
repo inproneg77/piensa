@@ -37,9 +37,14 @@
           "id": "div-5b6ebc9f8f409669fb27579c",
           "name": "Infantil 2015-2016",
           "branch": "Varonil"
+        },
+        {
+          "id": "div-4ed2c3a358cb5c00c9726b8e",
+          "name": "Infantil 2015-2016",
+          "branch": "Femenil"
         }
       ],
-      "updatedAt": "2026-09-25T18:48:17.288Z"
+      "updatedAt": "2026-09-25T18:48:30.766Z"
     }
   ]
 }
