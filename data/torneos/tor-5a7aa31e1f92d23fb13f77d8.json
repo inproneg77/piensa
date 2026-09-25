@@ -46,6 +46,18 @@
       "forfeit": 0,
       "tieOrder": [],
       "bracketSeeds": []
+    },
+    {
+      "id": "div-e8fe25a04fe8596b7334d9eb",
+      "name": "Micro 2017-2018",
+      "branch": "Varonil",
+      "groups": [],
+      "qualify": 2,
+      "win": 2,
+      "loss": 1,
+      "forfeit": 0,
+      "tieOrder": [],
+      "bracketSeeds": []
     }
   ],
   "games": [],
@@ -69,6 +81,10 @@
     },
     {
       "at": "2026-09-25T18:46:58.775Z",
+      "action": "Categoría y rama guardadas"
+    },
+    {
+      "at": "2026-09-25T18:47:31.702Z",
       "action": "Categoría y rama guardadas"
     }
   ]
