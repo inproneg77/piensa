@@ -38,7 +38,7 @@
     {
       "id": "div-c4ef9a849caf23ccaf26c016",
       "name": "Biberon Mixto 2019-2020",
-      "branch": "Varonil",
+      "branch": "Mixto",
       "groups": [],
       "qualify": 2,
       "win": 2,
@@ -65,6 +65,10 @@
     },
     {
       "at": "2026-09-25T18:46:33.118Z",
+      "action": "Categoría y rama guardadas"
+    },
+    {
+      "at": "2026-09-25T18:46:58.775Z",
       "action": "Categoría y rama guardadas"
     }
   ]
