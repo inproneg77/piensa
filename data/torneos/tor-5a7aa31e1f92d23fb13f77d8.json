@@ -154,6 +154,18 @@
       "forfeit": 0,
       "tieOrder": [],
       "bracketSeeds": []
+    },
+    {
+      "id": "div-1bd4792a943b178273d865a3",
+      "name": "Elite 2019-2010",
+      "branch": "Femenil",
+      "groups": [],
+      "qualify": 2,
+      "win": 2,
+      "loss": 1,
+      "forfeit": 0,
+      "tieOrder": [],
+      "bracketSeeds": []
     }
   ],
   "games": [],
@@ -213,6 +225,10 @@
     },
     {
       "at": "2026-09-25T18:49:57.407Z",
+      "action": "Categoría y rama guardadas"
+    },
+    {
+      "at": "2026-09-25T18:50:09.583Z",
       "action": "Categoría y rama guardadas"
     }
   ]
