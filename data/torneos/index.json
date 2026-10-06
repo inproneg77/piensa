@@ -94,7 +94,106 @@
           "branch": "Femenil"
         }
       ],
-      "updatedAt": "2026-09-25T21:03:47.864Z"
+      "updatedAt": "2026-09-25T21:03:47.864Z",
+      "visible": true
+    },
+    {
+      "id": "tor-d09a859ea482b00e7f3c2b64",
+      "name": "SIMULACIÓN · Copa Caborca 2026",
+      "logo": "img/torneos/tor-5a7aa31e1f92d23fb13f77d8/logo-87ae3b1e22630e4d09a4c1ee.png",
+      "status": "publicado",
+      "visible": false,
+      "isSimulation": true,
+      "start": "2026-11-06",
+      "end": "2026-11-08",
+      "divisions": [
+        {
+          "id": "div-f433868b9bf542f427cddfda",
+          "name": "Preescolar 2021 y posteriores",
+          "branch": "Varonil"
+        },
+        {
+          "id": "div-d6ec9d88ba377646932b04bb",
+          "name": "Preescolar 2021 y Posteriores",
+          "branch": "Femenil"
+        },
+        {
+          "id": "div-39993bf2ba3cc4d56a4ef579",
+          "name": "Biberon Mixto 2019-2020",
+          "branch": "Mixto"
+        },
+        {
+          "id": "div-a8ee02ed7699cb03514f9908",
+          "name": "Micro 2017-2018",
+          "branch": "Varonil"
+        },
+        {
+          "id": "div-aa428d113f975a09f245d9a7",
+          "name": "Micro 2017-2018",
+          "branch": "Femenil"
+        },
+        {
+          "id": "div-222fa484365a8e11f6352054",
+          "name": "Infantil 2015-2016",
+          "branch": "Varonil"
+        },
+        {
+          "id": "div-58515fe9a8ff5e33c14e6340",
+          "name": "Infantil 2015-2016",
+          "branch": "Femenil"
+        },
+        {
+          "id": "div-4335c1bee5355417dfa1b692",
+          "name": "Pasarela 2013-2014",
+          "branch": "Varonil"
+        },
+        {
+          "id": "div-7d15085239196d853eba4556",
+          "name": "Pasarela 2013-2014",
+          "branch": "Femenil"
+        },
+        {
+          "id": "div-9b13b89077205237c6e18be2",
+          "name": "Cadetes 2011-2012",
+          "branch": "Varonil"
+        },
+        {
+          "id": "div-d9af62d8d01e6f7df0bbac26",
+          "name": "Cadetes 2011-2012",
+          "branch": "Femenil"
+        },
+        {
+          "id": "div-44d7ec96dce53185e07f3470",
+          "name": "Elite 2019-2010",
+          "branch": "Varonil"
+        },
+        {
+          "id": "div-b91ce72217394a46f0214370",
+          "name": "Elite 2019-2010",
+          "branch": "Femenil"
+        },
+        {
+          "id": "div-e584296f09e5e0a33f156d95",
+          "name": "2da Fuerza",
+          "branch": "Varonil"
+        },
+        {
+          "id": "div-de06a7364fbf5c588e21c773",
+          "name": "2da Fuerza",
+          "branch": "Femenil"
+        },
+        {
+          "id": "div-8a71cfc8dee520525a66916a",
+          "name": "1ra Fuerza",
+          "branch": "Varonil"
+        },
+        {
+          "id": "div-12741cdd97bf6eb8867e288f",
+          "name": "1ra Fuerza",
+          "branch": "Femenil"
+        }
+      ],
+      "updatedAt": "2026-10-06T19:45:40.635Z"
     }
   ]
 }
