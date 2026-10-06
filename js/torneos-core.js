@@ -8,13 +8,14 @@
   const date = v => /^\d{4}-\d{2}-\d{2}$/.test(v)&&new Date(v+'T12:00:00Z').toISOString().slice(0,10)===v;
   const minutes = v => { if(!/^([01]\d|2[0-3]):[0-5]\d$/.test(v))fail('Usa una hora de 24 horas, por ejemplo 17:30.');return +v.slice(0,2)*60 + +v.slice(3); };
   const time = n => String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');
-  function create(title){return {schema:1,id:id('tor'),name:name(title),status:'borrador',logo:'',start:'',end:'',timezone:'America/Hermosillo',venues:[],teams:[],entries:[],divisions:[],games:[],trash:[],history:[]};}
+  function create(title){return {schema:1,id:id('tor'),name:name(title),status:'borrador',visible:false,logo:'',start:'',end:'',timezone:'America/Hermosillo',venues:[],teams:[],entries:[],divisions:[],games:[],trash:[],history:[]};}
   function division(title,branch){return {id:id('div'),name:name(title),branch:name(branch),groups:[],qualify:2,win:2,loss:1,forfeit:0,tieOrder:[],bracketSeeds:[]};}
   const divisionEntries=(t,d)=>t.entries.filter(e=>e.divisionId===d);
   const teamName=(t,e)=>t.teams.find(x=>x.id===t.entries.find(x=>x.id===e)?.teamId)?.name??'Por definir';
   function assertUnique(items,label){const s=new Set();items.forEach(x=>{if(!x.id||s.has(x.id))fail('ID duplicado o vacío en '+label);s.add(x.id);});}
   function validate(t){
     if(t.schema!==1||!/^tor-[a-f0-9]+$/.test(t.id))fail('Formato de torneo inválido.');name(t.name);
+    if(t.visible!==undefined&&typeof t.visible!=='boolean')fail('Visibilidad inválida.');
     if(!['borrador','publicado','finalizado','archivado'].includes(t.status))fail('Estado de torneo inválido.');
     if(t.start&&!date(t.start)||t.end&&!date(t.end)||t.start&&t.end&&t.end<t.start)fail('Revisa las fechas del torneo.');
     try{new Intl.DateTimeFormat('es',{timeZone:t.timezone}).format();}catch{fail('Zona horaria inválida.');}
@@ -78,10 +79,18 @@
   function result(t,gid,values){const next=clone(t),g=next.games.find(g=>g.id===gid);if(!g||g.bye)fail('No hay un partido capturable.');Object.assign(g,values,{status:'jugado'});validateResult(next,g);if(g.phase==='groups'&&next.games.some(x=>x.divisionId===g.divisionId&&x.phase==='knockout')){const d=next.divisions.find(d=>d.id===g.divisionId),qs=qualifiers(next,d.id);if(qs.join('|')!==(d.bracketSeeds??[]).join('|'))fail('Esta corrección cambia los clasificados o sus posiciones. Retira la llave desde Llaves antes de corregir los grupos.');}resolve(next);validate(next);return next;}
   function descendants(t,gid){const found=new Set([gid]);let changed=true;while(changed){changed=false;for(const g of t.games)if(!found.has(g.id)&&(found.has(g.homeSource)||found.has(g.awaySource))){found.add(g.id);changed=true;}}return t.games.filter(g=>found.has(g.id));}
   function reopen(t,gid){const next=clone(t),game=next.games.find(g=>g.id===gid);if(game.phase==='groups'&&next.games.some(g=>g.divisionId===game.divisionId&&g.phase==='knockout'))fail('Retira primero la llave de esta división para reabrir un partido de grupos.');for(const g of descendants(next,gid)){if(g.status==='jugado')next.trash.push({id:id('undo'),kind:'result',value:clone(g),at:new Date().toISOString()});Object.assign(g,{status:'programado',homeScore:0,awayScore:0,homeStats:[],awayStats:[],mvp:'',statsComplete:false});}resolve(next);return next;}
-  function stats(t,did,{groupId='',phase=''}={}){const rows={},teams={};const games=t.games.filter(g=>g.divisionId===did&&g.status==='jugado'&&!g.bye&&(!groupId||g.groupId===groupId)&&(!phase||g.phase===phase));for(const g of games)for(const side of ['home','away']){const eid=g[side],entry=t.entries.find(e=>e.id===eid),other=side==='home'?'away':'home';if(!entry)continue;const a=teams[eid]??={entryId:eid,name:teamName(t,eid),played:0,won:0,pf:0,pc:0,threes:0,againstThrees:0,fouls:0};a.played++;a.won+=winner(g)===eid?1:0;a.pf+=g[side+'Score'];a.pc+=g[other+'Score'];a.againstThrees+=(g[other+'Stats']??[]).reduce((n,x)=>n+x.threes,0);
+  function stats(t,did,{groupId='',phase=''}={}){const rows={},teams={};const games=t.games.filter(g=>g.divisionId===did&&g.status==='jugado'&&!g.bye&&(g.forfeit??'ninguno')==='ninguno'&&(!groupId||g.groupId===groupId)&&(!phase||g.phase===phase));for(const g of games)for(const side of ['home','away']){const eid=g[side],entry=t.entries.find(e=>e.id===eid),other=side==='home'?'away':'home';if(!entry)continue;const a=teams[eid]??={entryId:eid,name:teamName(t,eid),played:0,won:0,pf:0,pc:0,threes:0,againstThrees:0,fouls:0};a.played++;a.won+=winner(g)===eid?1:0;a.pf+=g[side+'Score'];a.pc+=g[other+'Score'];a.againstThrees+=(g[other+'Stats']??[]).reduce((n,x)=>n+x.threes,0);
       for(const line of g[side+'Stats']??[]){const p=entry.roster.find(p=>p.id===line.playerId);if(!p)continue;const r=rows[p.id]??={id:p.id,entryId:eid,name:p.name,number:p.number,team:teamName(t,eid),played:0,points:0,threes:0,fouls:0,mvp:0};r.played++;r.points+=line.points;r.threes+=line.threes;r.fouls+=line.fouls;r.mvp+=g.mvp===p.id?1:0;a.threes+=line.threes;a.fouls+=line.fouls;}}
     return {players:Object.values(rows),teams:Object.values(teams),games};}
   const roundName=(t,g)=>{const max=Math.max(...t.games.filter(x=>x.divisionId===g.divisionId&&x.phase==='knockout').map(x=>x.round));return ({0:'Final',1:'Semifinal',2:'Cuartos de final',3:'Octavos de final'})[max-g.round]??'Ronda '+g.round;};
-  const api={clone,id,name,integer,date,minutes,time,create,division,validate,validateResult,divisionEntries,teamName,standings,roundRobin,groupGames,schedule,qualifiers,bracket,winner,resolve,result,descendants,reopen,stats,roundName};
+  // Legacy published editions retain their visibility; new editions start hidden.
+  const isPublic=t=>typeof t.visible==='boolean'?t.visible:!/(?:prueba|test|demo)/i.test(t.name??'')&&['publicado','finalizado'].includes(t.status);
+  function clearSimulation(t){
+    if(t.isSimulation!==true)fail('Esta herramienta solo limpia una simulación.');
+    const n=clone(t);n.trash.push({id:id('undo'),kind:'simulation',at:new Date().toISOString(),value:{entries:clone(n.entries),games:clone(n.games),divisions:clone(n.divisions)}});
+    n.games=[];n.entries.forEach(e=>e.roster=[]);n.divisions.forEach(d=>{d.bracketSeeds=[];d.bracketOrder=[];d.tieOrder=[];});n.visible=false;n.status='borrador';validate(n);return n;
+  }
+  const api={clearSimulation,isPublic,clone,id,name,integer,date,minutes,time,create,division,validate,validateResult,divisionEntries,teamName,standings,roundRobin,groupGames,schedule,qualifiers,bracket,winner,resolve,result,descendants,reopen,stats,roundName};
   if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.Torneo=api;
 })(typeof window!=='undefined'?window:this);
+

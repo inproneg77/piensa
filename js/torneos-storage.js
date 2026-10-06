@@ -6,8 +6,8 @@
   const decode=content=>JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(content.replace(/\s/g,'')),c=>c.charCodeAt(0))));
   async function read(path,ref='main'){try{const file=await api('/contents/'+path+'?ref='+encodeURIComponent(ref));return {sha:file.sha,data:decode(file.content)};}catch(e){if(e.status===404)return {sha:null,data:null};throw e;}}
   async function publicJSON(path){const res=await fetcher((root.CopaConfig?.dataBase??'./')+path,{cache:'no-store'});if(!res.ok)throw new Error('No se pudo cargar el torneo. Vuelve a intentar.');return res.json();}
-  async function catalog(admin){if(admin)return (await read('data/torneos/index.json')).data??{torneos:[]};return publicJSON('data/torneos/index.json');}
-  async function load(id,admin){if(!/^tor-[a-f0-9]+$/.test(id))throw new Error('Identificador de torneo inválido.');const path='data/torneos/'+id+'.json';const file=admin?await read(path):{sha:null,data:await publicJSON(path)};if(!file.data)throw new Error('El torneo no existe.');core.validate(file.data);return file;}
+  async function catalog(admin){if(admin)return (await read('data/torneos/index.json')).data??{torneos:[]};const data=await publicJSON('data/torneos/index.json');return {...data,torneos:data.torneos.filter(core.isPublic)};}
+  async function load(id,admin){if(!/^tor-[a-f0-9]+$/.test(id))throw new Error('Identificador de torneo inválido.');const path='data/torneos/'+id+'.json';const file=admin?await read(path):{sha:null,data:await publicJSON(path)};if(!file.data)throw new Error('El torneo no existe.');if(!admin&&!core.isPublic(file.data))throw new Error('Esta edición está oculta. Entra a administración con tu token para consultarla.');core.validate(file.data);return file;}
   async function save(t,expectedSha,images={}){
    if(!getToken())throw new Error('Conecta tu token para guardar.');core.validate(t);
    const path='data/torneos/'+t.id+'.json';
@@ -16,7 +16,7 @@
     const head=(await api('/git/ref/heads/main')).object.sha;
     const current=await read(path,head);if(current.sha!==expectedSha){const error=new Error('Otra persona modificó este torneo. Tu borrador está conservado. Exporta una copia y abre la versión actual antes de combinar cambios.');error.status=409;throw error;}
     const index=(await read('data/torneos/index.json',head)).data??{torneos:[]};
-    const summary={id:t.id,name:t.name,logo:t.logo,status:t.status,start:t.start,end:t.end,divisions:t.divisions.map(d=>({id:d.id,name:d.name,branch:d.branch})),updatedAt:new Date().toISOString()};
+    const summary={id:t.id,name:t.name,logo:t.logo,status:t.status,visible:core.isPublic(t),isSimulation:t.isSimulation===true,start:t.start,end:t.end,divisions:t.divisions.map(d=>({id:d.id,name:d.name,branch:d.branch})),updatedAt:new Date().toISOString()};
     index.torneos=[...index.torneos.filter(x=>x.id!==t.id),summary];
     const parent=await api('/git/commits/'+head);const entries=[];
     const dataBlob=await api('/git/blobs','POST',{content:JSON.stringify(t,null,2)+'\n',encoding:'utf-8'});entries.push({path,mode:'100644',type:'blob',sha:dataBlob.sha});
@@ -35,3 +35,4 @@
  }
  if(typeof module!=='undefined'&&module.exports)module.exports=createStorage;else root.createTournamentStorage=createStorage;
 })(typeof window!=='undefined'?window:this);
+
