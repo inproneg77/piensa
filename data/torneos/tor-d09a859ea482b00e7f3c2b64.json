@@ -20,11 +20,6 @@
   ],
   "teams": [
     {
-      "id": "team-cae37df706459cbf2d12cb13",
-      "name": "Caborca",
-      "logo": ""
-    },
-    {
       "id": "team-c3602bfc483807f1c74af772",
       "name": "Labradores",
       "logo": ""
@@ -38,6 +33,11 @@
       "id": "team-dd5d7c44c6fe2e40d4c60b3f",
       "name": "Nogales",
       "logo": ""
+    },
+    {
+      "id": "team-cae37df706459cbf2d12cb13",
+      "name": "Caborca",
+      "logo": "img/torneos/tor-d09a859ea482b00e7f3c2b64/logo-6524511ff63e08123ca0742e.png"
     }
   ],
   "entries": [
@@ -11730,6 +11730,10 @@
     {
       "at": "2026-10-06T19:45:40.562Z",
       "action": "Escenario ficticio para demostración al coordinador. Sin datos deportivos reales."
+    },
+    {
+      "at": "2026-10-07T00:59:55.747Z",
+      "action": "Nombre y logo actualizados"
     }
   ],
   "isSimulation": true
