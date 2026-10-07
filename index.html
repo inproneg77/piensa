@@ -5,9 +5,10 @@
  <title>Caborca Piensa en Grande — Copa de Básquetbol</title>
  <meta name="description" content="El espacio de la Copa Caborca Piensa en Grande. Ediciones, categorías femeniles y varoniles, equipos, calendario, grupos, resultados y líderes.">
  <meta name="theme-color" content="#751b3c">
- <link rel="stylesheet" href="css/torneos.css?v=copa-mobile-20261007"><link rel="stylesheet" href="css/copa.css?v=copa-mobile-20261007">
- <script src="js/copa.js?v=copa-mobile-20261007"></script>
- <link rel="stylesheet" href="css/copa-2026.css?v=copa-mobile-20261007">
+ <link rel="stylesheet" href="css/torneos.css?v=copa-premium-20261007"><link rel="stylesheet" href="css/copa.css?v=copa-premium-20261007">
+ <script src="js/copa.js?v=copa-premium-20261007"></script>
+ <link rel="stylesheet" href="css/copa-2026.css?v=copa-premium-20261007">
+ <link rel="stylesheet" href="css/copa-premium.css?v=copa-premium-20261007">
 </head>
 <body>
  <a class="skip" href="#main">Saltar al contenido</a>
@@ -16,10 +17,10 @@
   <nav aria-label="Navegación de la copa"><a href="./">Ediciones</a><a class="admin-link" href="?administrar=1">Administrar copa <span aria-hidden="true">↗</span></a></nav>
  </header>
  <section class="copa-hero" aria-label="Presentación de la copa">
-  <div class="hero-copy"><span class="eyebrow">UNA CIUDAD. MUCHAS CATEGORÍAS. LA MISMA PASIÓN.</span><h1>Caborca<br>Piensa en <em>Grande.</em></h1><p>La cancha nos reúne.<br>Vive cada edición, cada equipo y cada partido.</p><a class="hero-cta" href="#tor-app">Explorar ediciones <span aria-hidden="true">↓</span></a></div>
-  <div class="court-art" aria-hidden="true"><div class="court-lines"></div><span class="court-word">JUEGA<br>EN<br>GRANDE.</span><span class="court-caption">CABORCA · SONORA</span><div class="ball"></div></div>
+  <div class="hero-copy"><span class="eyebrow"><i aria-hidden="true"></i> CABORCA, SONORA · BÁSQUETBOL</span><h1>Piensa en<br><em>Grande.</em></h1><p class="hero-lead">La pasión nos reúne.<br>La cancha escribe la historia.</p><a class="hero-cta" href="#tor-app">Vive la copa <span aria-hidden="true">↗</span></a><div class="hero-footnote"><span>UNA CIUDAD. UNA COPA.</span><span>MUCHAS HISTORIAS.</span></div></div>
+  <div class="copa-emblem" aria-hidden="true"><span class="emblem-caption">EL ENCUENTRO QUE NOS UNE</span><div class="emblem-orbit"><svg class="trophy-art" viewBox="0 0 360 380" fill="none"><circle cx="180" cy="157" r="128" stroke="currentColor" stroke-opacity=".18"/><circle cx="180" cy="157" r="116" stroke="currentColor" stroke-opacity=".35"/><path d="M134 97h92l-9 69c-3 28-21 46-37 46s-34-18-37-46l-9-69Z" stroke="currentColor" stroke-width="2"/><path d="M137 116h-25v26c0 25 16 37 36 38m75-64h25v26c0 25-16 37-36 38M174 212v49m12-49v49m-27 0h42l12 14h-66l12-14Zm-11 14h64v17h-64v-17Z" stroke="currentColor" stroke-width="2"/><circle cx="180" cy="147" r="23" stroke="currentColor" stroke-width="1.4"/><path d="M157 147h46m-23-23v46m-13-42c20 11 20 26 0 38m26-38c-20 11-20 26 0 38" stroke="currentColor" stroke-width="1.1"/><path d="m180 33 4 8-4 8-4-8 4-8ZM68 211l4 8-4 8-4-8 4-8Zm224 0 4 8-4 8-4-8 4-8Z" fill="currentColor"/><path d="M70 315h76m68 0h76" stroke="currentColor" stroke-opacity=".5"/><text x="180" y="321" fill="currentColor" font-family="serif" font-size="21" text-anchor="middle">CPG</text></svg></div><span class="emblem-city">CABORCA PIENSA EN GRANDE</span><span class="emblem-sub">EL JUEGO. LA COMUNIDAD. EL LEGADO.</span></div>
  </section>
- <div class="copa-strip"><span>Femenil y varonil</span><span>Categorías independientes</span><span>Grupos + eliminación directa</span></div>
+ <div class="copa-strip"><span><b>01</b> Femenil y varonil</span><span><b>02</b> Cada categoría, su historia</span><span><b>03</b> Una final. Todo en la cancha.</span></div>
  <main id="main" class="tor-wrap">
   <div id="tor-message" role="status" aria-live="polite"></div>
   <section id="tor-auth" hidden aria-label="Acceso de organización"><h2>Administrar la copa</h2><p>Crea una edición, registra sus categorías y organiza la competencia.</p><label>Token de GitHub para el repositorio piensa<input type="password" id="tor-token" autocomplete="off" placeholder="Token con acceso a piensa"></label><div class="tor-actions"><button id="tor-connect">Conectar</button><button id="tor-disconnect" class="secondary">Cerrar acceso</button></div><p class="tor-muted">Se guarda en este navegador hasta cerrar acceso. Necesita permiso Contents: lectura y escritura en inproneg77/piensa. Este acceso es independiente del de la liga.</p></section>
@@ -27,7 +28,7 @@
  </main>
  <dialog id="tor-dialog"><form id="tor-form"><div id="tor-fields"></div><p id="tor-form-error" role="alert"></p><div class="tor-actions"><button type="submit">Guardar / continuar</button><button type="button" id="tor-cancel" class="secondary">Cancelar</button></div></form></dialog>
  <footer class="copa-footer"><strong>Caborca Piensa en Grande</strong><p>Una copa. Una comunidad. Una nueva historia cada año.</p><a href="?administrar=1">Acceso de organización</a></footer>
- <script src="js/torneos-core.js?v=copa-mobile-20261007"></script><script src="js/torneos-storage.js?v=copa-mobile-20261007"></script><script src="js/copa-share.js?v=copa-mobile-20261007"></script><script src="js/copa-reports.js?v=copa-mobile-20261007"></script><script src="js/torneos-ui.js?v=copa-mobile-20261007"></script>
+ <script src="js/torneos-core.js?v=copa-premium-20261007"></script><script src="js/torneos-storage.js?v=copa-premium-20261007"></script><script src="js/copa-share.js?v=copa-premium-20261007"></script><script src="js/copa-reports.js?v=copa-premium-20261007"></script><script src="js/torneos-ui.js?v=copa-premium-20261007"></script>
 </body></html>
 
 
