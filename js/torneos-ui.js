@@ -90,10 +90,16 @@
  function archive(n,kind,value){n.trash.push({id:C.id('trash'),kind,value:C.clone(value),at:new Date().toISOString()});}
 
  function renderDownloads(){
+  const labels={"summary":"Informe de la edición","calendar":"Calendario de juegos","results":"Resultados y hojas de estadísticas","teams":"Equipos, rosters y estadísticas","standings":"Standing por grupo","leaders":"Líderes individuales","rankings":"Rankings de equipos","bracket":"Llaves de eliminación"};
   const reports=['summary','calendar','results','teams','standings','leaders','rankings','bracket'];
-  return '<h2>Descargas</h2><p>Descarga un archivo PDF listo para enviar o imprimir, o un CSV para abrir en Excel. Elige la categoría y rama o todas las de esta edición.</p>'+select('Incluir en el archivo','download-division',[{id:'',name:'Todas las categorías y ramas'},...tournament.divisions.map(d=>({id:d.id,name:d.name+' · '+d.branch}))],divisionId,'id="download-division"')+'<div class="tor-grid">'+reports.map(kind=>'<article class="tor-card"><h3>'+H(CopaReports.titles[kind])+'</h3><div class="tor-actions">'+action('download-pdf','Descargar PDF',kind)+action('download-csv','Descargar CSV',kind,'secondary')+'</div></article>').join('')+'</div><p>Los informes de equipo, jugador y partido también se descargan directamente desde sus fichas. Los archivos respetan la edición, categoría y rama elegidas; las simulaciones llevan una leyenda visible.</p>';
+  return '<h2>Descargas</h2><p>Descarga un archivo PDF listo para enviar o imprimir, o un CSV para abrir en Excel. Elige la categoría y rama o todas las de esta edición.</p>'+select('Incluir en el archivo','download-division',[{id:'',name:'Todas las categorías y ramas'},...tournament.divisions.map(d=>({id:d.id,name:d.name+' · '+d.branch}))],divisionId,'id="download-division"')+'<div class="tor-grid">'+reports.map(kind=>'<article class="tor-card"><h3>'+H(labels[kind])+'</h3><div class="tor-actions">'+action('download-pdf','Descargar PDF',kind)+action('download-csv','Descargar CSV',kind,'secondary')+'</div></article>').join('')+'</div><p>Los informes de equipo, jugador y partido también se descargan directamente desde sus fichas. Los archivos respetan la edición, categoría y rama elegidas; las simulaciones llevan una leyenda visible.</p>';
  }
  let reportBusy=false;
+ async function ensureReports(){
+  if(typeof CopaReports!=='undefined')return;
+  await new Promise((ok,no)=>{const script=document.createElement('script');script.src=new URL('js/copa-reports.js?v=copa-pdf-20261006',CopaConfig.assetBase).href;script.onload=ok;script.onerror=()=>{script.remove();no(new Error('No se pudo cargar el generador de reportes. Revisa la conexión y reintenta.'));};document.head.append(script);});
+ }
+
  async function downloadReport(a,id){
   if(reportBusy){notify('Ya se está preparando una descarga. Espera un momento.');return;}
   const kind=a.startsWith('download-')?id:a.slice(4),options={kind,divisionId:a.startsWith('download-')?$('download-division').value:divisionId};
@@ -102,8 +108,8 @@
   if(kind==='game')options.gameId=id;
   if(['leaders','rankings'].includes(kind)&&view==='lideres'){options.phase=$('stats-phase').value;options.groupId=$('stats-group').value;}
   if(kind==='compare')options.compareIds=[$('compare-a').value,$('compare-b').value];
-  reportBusy=true;notify('Preparando '+CopaReports.titles[kind]+'…');
-  try{await CopaReports.download(tournament,options,logo,a==='download-csv'?'csv':'pdf');notify('Archivo generado. Revisa las descargas del navegador.'+(dirty?' Incluye cambios pendientes de guardar.':''));}finally{reportBusy=false;}
+  reportBusy=true;notify('Preparando archivo…');
+  try{await ensureReports();await CopaReports.download(tournament,options,logo,a==='download-csv'?'csv':'pdf');notify('Archivo generado. Revisa las descargas del navegador.'+(dirty?' Incluye cambios pendientes de guardar.':''));}finally{reportBusy=false;}
  }
 
  async function handle(a,id){
