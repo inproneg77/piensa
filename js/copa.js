@@ -16,6 +16,11 @@
   img.hidden=!logo;mark.hidden=!!logo;if(logo)img.src=logo;else img.removeAttribute('src');
   document.body.classList.toggle('edition-open',edition);
  }};
+ document.addEventListener('error',event=>{
+  const image=event.target;if(image?.tagName!=='IMG'||image.dataset.copaFallback)return;
+  const prefix='https://raw.githubusercontent.com/inproneg77/piensa/main/';
+  if(image.src.startsWith(prefix)){image.dataset.copaFallback='1';image.src='https://cdn.jsdelivr.net/gh/inproneg77/piensa@main/'+image.src.slice(prefix.length);}
+ },true);
  document.addEventListener('DOMContentLoaded',()=>{
   const admin=new URLSearchParams(location.search).get('administrar')==='1';
   document.body.classList.toggle('is-admin',admin);

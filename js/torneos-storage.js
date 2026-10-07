@@ -5,7 +5,15 @@
   async function api(path,method='GET',body){const headers={'Accept':'application/vnd.github+json'};if(getToken())headers.Authorization='Bearer '+getToken();if(body)headers['Content-Type']='application/json';const response=await fetcher(base+path,{method,headers,body:body?JSON.stringify(body):undefined,cache:'no-store'});if(!response.ok){let message='';try{message=(await response.json()).message??'';}catch{}const error=new Error(response.status===401||response.status===403?'No se pudo autorizar. Revisa que tu token tenga permiso de escritura en piensa.':response.status===409||response.status===422?'Otro guardado cambió el repositorio. Tu borrador se conserva; vuelve a intentar.':'GitHub respondió '+response.status+(message?': '+message:''));error.status=response.status;throw error;}return response.status===204?null:response.json();}
   const decode=content=>JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(content.replace(/\s/g,'')),c=>c.charCodeAt(0))));
   async function read(path,ref='main'){try{const file=await api('/contents/'+path+'?ref='+encodeURIComponent(ref));return {sha:file.sha,data:decode(file.content)};}catch(e){if(e.status===404)return {sha:null,data:null};throw e;}}
-  async function publicJSON(path){const res=await fetcher((root.CopaConfig?.dataBase??'./')+path,{cache:'no-store'});if(!res.ok)throw new Error('No se pudo cargar el torneo. Vuelve a intentar.');return res.json();}
+  async function publicRequest(url,github=false){
+   const controller=new AbortController();let timer;
+   try{return await Promise.race([(async()=>{const response=await fetcher(url,{cache:'no-store',signal:controller.signal});if(!response.ok)throw new Error('HTTP '+response.status);const data=await response.json();return github?decode(data.content):data;})(),new Promise((_,reject)=>{timer=setTimeout(()=>{controller.abort();reject(new Error('Tiempo de conexión agotado'));},10000);})]);}finally{clearTimeout(timer);}
+  }
+  async function publicJSON(path){
+   try{return await publicRequest((root.CopaConfig?.dataBase??'./')+path);}catch{}
+   // Lectura pública alternativa sin enviar el token a otra ruta.
+   try{return await publicRequest(base+'/contents/'+path+'?ref=main',true);}catch{throw new Error('No se pudieron cargar los datos con esta conexión. Vuelve a intentar.');}
+  }
   async function catalog(admin){if(admin)return (await read('data/torneos/index.json')).data??{torneos:[]};const data=await publicJSON('data/torneos/index.json');return {...data,torneos:data.torneos.filter(core.isPublic)};}
   async function load(id,admin){if(!/^tor-[a-f0-9]+$/.test(id))throw new Error('Identificador de torneo inválido.');const path='data/torneos/'+id+'.json';const file=admin?await read(path):{sha:null,data:await publicJSON(path)};if(!file.data)throw new Error('El torneo no existe.');if(!admin&&!core.isPublic(file.data))throw new Error('Esta edición está oculta. Entra a administración con tu token para consultarla.');core.validate(file.data);return file;}
   async function save(t,expectedSha,images={}){
